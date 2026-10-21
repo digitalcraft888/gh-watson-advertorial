@@ -324,7 +324,27 @@ th,td{padding:10px;font-size:14px}
       <div class="card"><h3>Healthy Indoors</h3><p>Layouts that improve airflow, comfort and indoor air quality.</p></div>
       <div class="card"><h3>All US Climates</h3><p>Built for comfort across US climates. Check yours with the free climate zone guide.</p></div>
     </div>
-    <!-- REVIEWS: add only real, verified customer reviews here (name, location, date, text). Then add Review/AggregateRating schema to match. -->
+    <div id="reviews" hidden style="margin-top:24px">
+      <div class="center"><p class="eyebrow">Buyer reviews</p><h2>What Buyers Say</h2></div>
+      <div class="cards" id="reviewList" style="margin-top:20px"></div>
+    </div>
+    <script>
+    // Add only real, verified reviews: {name:'Jane D.', place:'Austin, TX', date:'Oct 2026', stars:5, text:'...'}
+    // The section stays hidden while this list is empty. Add matching Review schema when you fill it.
+    var REVIEWS=[];
+    (function(){
+      if(!REVIEWS.length)return;
+      var l=document.getElementById('reviewList');
+      REVIEWS.forEach(function(r){
+        var c=document.createElement('div');c.className='card';
+        var s=document.createElement('div');s.style.cssText='color:#F0B400;font-size:20px';s.textContent='★'.repeat(r.stars||5);
+        var p=document.createElement('p');p.style.margin='8px 0';p.textContent='“'+r.text+'”';
+        var n=document.createElement('b');n.textContent=r.name+' · '+r.place+' · '+r.date;
+        c.append(s,p,n);l.appendChild(c);
+      });
+      document.getElementById('reviews').hidden=false;
+    })();
+    </script>
     <div class="card" style="margin-top:24px;display:grid;grid-template-columns:200px 1fr;gap:20px;align-items:center">
       <img src="https://www.ghbuilderstore.com/cdn/shop/files/Lachlan_0fe241a6-7a66-4c23-9fc1-e7ff648e1d90.jpg?v=1778024833&width=400" alt="The Lachlan 3-bedroom single-story house plan, 2,077 sq ft" loading="lazy" width="200" height="150" style="border-radius:10px">
       <div><h3>Want a smaller footprint? Meet The Lachlan</h3><p>A 2,077 sq ft, 3-bedroom, single-story, solar-ready design with a 1-car garage, from the same builder.</p><p style="margin-top:8px"><a href="https://www.ghbuilderstore.com/products/lachlan"><b>See The Lachlan plan →</b></a></p></div>
