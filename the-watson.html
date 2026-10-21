@@ -96,6 +96,17 @@ h2{font-size:clamp(25px,4vw,36px);font-weight:800;margin-bottom:12px}
 .card h3{font-size:19px;margin-bottom:6px}
 .card p{color:var(--mut);font-size:15px}
 .cards.four{grid-template-columns:repeat(4,1fr)}
+.stars{color:#F0B400;letter-spacing:2px}
+.herorate,.ratesum{display:inline-flex;gap:6px;align-items:center;font-size:15px;color:var(--ink);text-decoration:none;margin:0 0 14px;flex-wrap:wrap}
+.herorate span:last-child,.ratesum span:last-child{color:var(--mut)}
+.ratesum{font-size:17px;margin-top:6px}
+.ph{outline:2px dashed #c62828;outline-offset:4px;border-radius:6px}
+.review{position:relative;padding-bottom:44px}
+.rtop{display:flex;gap:12px;align-items:center;margin-bottom:8px}
+.avatar{width:48px;height:48px;border-radius:50%;background:var(--g);color:#fff;display:grid;place-items:center;font-weight:800;font-family:Montserrat;flex:none;object-fit:cover}
+.rtop small{color:var(--mut)}
+.samp{position:absolute;left:24px;bottom:14px;background:#c62828;color:#fff;font-size:11px;font-weight:800;letter-spacing:.08em;padding:3px 10px;border-radius:99px}
+.ver{position:absolute;left:24px;bottom:14px;color:var(--g);font-size:13px;font-weight:700}
 .split{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
 .pics{display:grid;gap:14px}.pics img,.photoband img,.wideimg{border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,.12);object-fit:cover;width:100%}
 .photoband{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px}
@@ -180,6 +191,7 @@ th,td{padding:10px;font-size:14px}
   <div>
     <p class="eyebrow">Green Home Design · Estimation Set</p>
     <h1>The Watson: 4-Bedroom Single-Story House Plan</h1>
+    <a class="herorate" href="#reviews"><span class="stars" id="heroStars"></span> <b id="heroAvg"></b> <span id="heroCount"></span></a>
     <p class="sub">A 3,065 sq ft solar-ready green home on one level. Get the estimation drawings, collect real builder quotes, and know your numbers before you commit to full construction drawings.</p>
     <div class="chips"><span>3,065 sq ft</span><span>4 Bedrooms</span><span>Single Story</span><span>2-Car Garage</span></div>
     <div class="price"><s>$550.00</s><b>$467.50</b><em>SAVE 15%</em></div>
@@ -361,25 +373,53 @@ th,td{padding:10px;font-size:14px}
       <div class="card"><h3>Healthy Indoors</h3><p>Layouts that improve airflow, comfort and indoor air quality.</p></div>
       <div class="card"><h3>All US Climates</h3><p>Built for comfort across US climates. Check yours with the free climate zone guide.</p></div>
     </div>
-    <div id="reviews" hidden style="margin-top:24px">
-      <div class="center"><p class="eyebrow">Buyer reviews</p><h2>What Buyers Say</h2></div>
-      <div class="cards" id="reviewList" style="margin-top:20px"></div>
+    <div id="reviews" style="margin-top:34px">
+      <div class="center"><p class="eyebrow">Buyer reviews</p><h2>What Buyers Say About The Watson</h2>
+        <div class="ratesum"><span class="stars" id="rsStars"></span> <b id="rsAvg"></b> <span id="rsCount"></span></div>
+      </div>
+      <div class="cards" id="reviewList" style="margin-top:20px;text-align:left"></div>
+      <p class="note" id="rvNote"></p>
     </div>
     <script>
-    // Add only real, verified reviews: {name:'Jane D.', place:'Austin, TX', date:'Oct 2026', stars:5, text:'...'}
-    // The section stays hidden while this list is empty. Add matching Review schema when you fill it.
-    var REVIEWS=[];
+    // ===== EDIT HERE =====
+    // 1) Rating summary. Set avg and count to your real numbers (e.g. avg:4.8, count:23). While null, placeholders show.
+    var RATING={avg:null,count:null};
+    // 2) Reviews. Replace each sample with a real, verified review. Set sample:false (or delete it) when real.
+    var REVIEWS=[
+      {sample:true,name:'Reviewer Name',place:'City, ST',date:'Month YYYY',stars:5,title:'Review headline',text:'Replace with a real customer review about getting builder quotes with the Watson estimation set.',img:''},
+      {sample:true,name:'Reviewer Name',place:'City, ST',date:'Month YYYY',stars:5,title:'Review headline',text:'Replace with a real customer review about the layout, the 3D walkthrough or the energy-efficient design.',img:''},
+      {sample:true,name:'Reviewer Name',place:'City, ST',date:'Month YYYY',stars:5,title:'Review headline',text:'Replace with a real customer review about delivery, support or comparing builder quotes.',img:''}
+    ];
+    // ===== END EDIT =====
     (function(){
-      if(!REVIEWS.length)return;
+      var real=RATING.avg!=null&&RATING.count!=null&&!REVIEWS.some(function(r){return r.sample});
+      function stars(n){return '★★★★★'.slice(0,Math.round(n))+'☆☆☆☆☆'.slice(0,5-Math.round(n))}
+      var avg=real?RATING.avg.toFixed(1):'X.X',cnt=real?RATING.count+' verified reviews':'N reviews';
+      var out=[document.getElementById('rsStars'),document.getElementById('rsAvg'),document.getElementById('rsCount'),document.getElementById('heroStars'),document.getElementById('heroAvg'),document.getElementById('heroCount')];
+      out[0].textContent=out[3].textContent=stars(real?RATING.avg:5);
+      out[1].textContent=out[4].textContent=avg+' out of 5';
+      out[2].textContent=out[5].textContent='· '+cnt;
+      if(!real)document.querySelectorAll('.ratesum,.herorate').forEach(function(e){e.classList.add('ph')});
       var l=document.getElementById('reviewList');
       REVIEWS.forEach(function(r){
-        var c=document.createElement('div');c.className='card';
-        var s=document.createElement('div');s.style.cssText='color:#F0B400;font-size:20px';s.textContent='★'.repeat(r.stars||5);
-        var p=document.createElement('p');p.style.margin='8px 0';p.textContent='“'+r.text+'”';
-        var n=document.createElement('b');n.textContent=r.name+' · '+r.place+' · '+r.date;
-        c.append(s,p,n);l.appendChild(c);
+        var c=document.createElement('div');c.className='card review';
+        var top=document.createElement('div');top.className='rtop';
+        var av=document.createElement(r.img?'img':'div');av.className='avatar';
+        if(r.img){av.src=r.img;av.alt=r.name;av.width=48;av.height=48}else av.textContent=(r.name||'?').charAt(0);
+        var who=document.createElement('div');
+        var n=document.createElement('b');n.textContent=r.name;
+        var m=document.createElement('small');m.textContent=r.place+' · '+r.date;
+        who.append(n,document.createElement('br'),m);
+        top.append(av,who);
+        var s=document.createElement('div');s.className='stars';s.textContent=stars(r.stars||5);
+        var h=document.createElement('h3');h.textContent=r.title;h.style.margin='4px 0';
+        var p=document.createElement('p');p.textContent=r.text;
+        c.append(top,s,h,p);
+        if(r.sample){var t=document.createElement('span');t.className='samp';t.textContent='SAMPLE – REPLACE';c.appendChild(t)}
+        else{var v=document.createElement('span');v.className='ver';v.textContent='✔ Verified buyer';c.appendChild(v)}
+        l.appendChild(c);
       });
-      document.getElementById('reviews').hidden=false;
+      if(!real)document.getElementById('rvNote').textContent='Placeholder content: replace with real, verified reviews before this page goes live.';
     })();
     </script>
     <div class="card" style="margin-top:24px;display:grid;grid-template-columns:200px 1fr;gap:20px;align-items:center">
