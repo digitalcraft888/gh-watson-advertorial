@@ -223,6 +223,13 @@ body{font-size:16px}
 .rvw .ver{position:absolute;left:24px;bottom:16px;color:#1f5a3a;font-size:13px;font-weight:700}
 .rvw .rnote{font-size:13px;color:#6b756e;margin-top:18px}
 @media(max-width:860px){.rvw .rgrid{grid-template-columns:1fr}}
+
+.rvw .rgrid{grid-template-columns:repeat(2,1fr)}
+.rvw .rcard{margin:0;padding:28px 28px 24px;display:flex;flex-direction:column;gap:16px}
+.rvw .rcard blockquote{font-size:16px;color:#2c3730;line-height:1.7;margin:0;font-style:normal;position:relative}
+.rvw .rtop{margin:0;margin-top:auto;padding-top:4px}
+.rvw .rnote a{color:#1f5a3a}
+@media(max-width:860px){.rvw .rgrid{grid-template-columns:1fr}}
 </style></head><body>
 <div class="announce">Advertorial · Home Planning</div>
 <header class="nav"><div class="wrap"><a class="logo" href="https://www.ghbuilderstore.com/collections/sustainable-house-plans" rel="noopener"><img src="https://digitalcraft888.github.io/gh-watson-advertorial/gh-builders-logo.png" alt="GH Builders USA" width="148" height="40"></a><a class="btn sm" href="https://www.ghbuilderstore.com/collections/sustainable-house-plans" data-cta="nav" rel="noopener">Browse Plans</a></div></header>
@@ -311,44 +318,39 @@ body{font-size:16px}
 <details><summary>Who do I contact with questions?</summary><p>Email <a href=mailto:office@greenhomesbuilders.com>office@greenhomesbuilders.com</a> or call +1 (302) 244 5730.</p></details></div></div></section>
 
 <div class="rvw" id="reviews"><div class="rvw-in">
-<span class="rv-eb">Buyer reviews</span><h2>What buyers say</h2>
-<div class="rsum"><span class="st" id="rsStars"></span> <b id="rsAvg"></b> <span id="rsCount"></span></div>
-<div class="rgrid" id="reviewList"></div><p class="rnote" id="rvNote"></p>
+<span class="rv-eb">Trusted by our customers</span><h2>What buyers say</h2>
+<div class="rsum" id="rsum" hidden><span class="st" id="rsStars"></span> <b id="rsAvg"></b> <span id="rsCount"></span></div>
+<div class="rgrid" id="reviewList"></div><p class="rnote">Testimonials published by GH Builders USA at <a href="https://ghbuildersusa.com/" rel="noopener">ghbuildersusa.com</a>.</p>
 </div>
 <script>
 // ===== EDIT HERE =====
-// 1) Rating summary: set avg and count to your real numbers (e.g. avg:4.8, count:23). Placeholders show while null.
+// Optional rating summary: set both to show it (e.g. avg:4.8, count:23). Hidden while null.
 var RATING={avg:null,count:null};
-// 2) Reviews: replace each sample with a real, verified review and delete sample:true.
+// Testimonials. Add or edit entries; place/date/img are optional.
 var REVIEWS=[
- {sample:true,name:'Reviewer Name',place:'City, ST',date:'Month YYYY',stars:5,title:'Review headline',text:'Replace with a real customer review about getting builder quotes with an estimation drawing set.',img:''},
- {sample:true,name:'Reviewer Name',place:'City, ST',date:'Month YYYY',stars:5,title:'Review headline',text:'Replace with a real customer review about the layout, size choice or energy-efficient design.',img:''},
- {sample:true,name:'Reviewer Name',place:'City, ST',date:'Month YYYY',stars:5,title:'Review headline',text:'Replace with a real customer review about delivery, support or comparing builder quotes.',img:''}
+ {name:'Michael Johnson',text:'We wanted an eco-friendly home but didn\u2019t know where to start. GH Builders USA gave us a complete solution\u2014energy-efficient, practical, and affordable.'},
+ {name:'Ashley Bennett',text:'I was able to explore different designs and find one that matched my lifestyle and budget in minutes. The checkout and download process was super easy.'},
+ {name:'Christopher Hayes',text:'These designs are practical and realistic\u2014not like AI-generated concepts that can\u2019t actually be built. Everything is structured for real-world construction.'},
+ {name:'Matthew Reed',text:'You can tell these plans are backed by real data and experience. It gave me confidence that I was investing in something reliable.'}
 ];
 // ===== END EDIT =====
 (function(){
- var real=RATING.avg!=null&&RATING.count!=null&&!REVIEWS.some(function(r){return r.sample});
- function stars(n){n=Math.round(n);return '★★★★★'.slice(0,n)+'☆☆☆☆☆'.slice(0,5-n)}
- document.getElementById('rsStars').textContent=stars(real?RATING.avg:5);
- document.getElementById('rsAvg').textContent=(real?RATING.avg.toFixed(1):'X.X')+' out of 5';
- document.getElementById('rsCount').textContent='· '+(real?RATING.count+' verified reviews':'N reviews');
- if(!real)document.querySelector('.rvw .rsum').classList.add('ph');
+ function stars(n){n=Math.round(n);return '\u2605\u2605\u2605\u2605\u2605'.slice(0,n)+'\u2606\u2606\u2606\u2606\u2606'.slice(0,5-n)}
+ if(RATING.avg!=null&&RATING.count!=null){document.getElementById('rsStars').textContent=stars(RATING.avg);document.getElementById('rsAvg').textContent=RATING.avg.toFixed(1)+' out of 5';document.getElementById('rsCount').textContent='\u00b7 '+RATING.count+' reviews';document.getElementById('rsum').hidden=false}
  var l=document.getElementById('reviewList');
  REVIEWS.forEach(function(r){
-  var c=document.createElement('div');c.className='rcard';
-  var top=document.createElement('div');top.className='rtop';
+  var c=document.createElement('figure');c.className='rcard';
+  var q=document.createElement('blockquote');q.textContent='\u201c'+r.text+'\u201d';
+  var cap=document.createElement('figcaption');cap.className='rtop';
   var av=document.createElement(r.img?'img':'div');av.className='av2';
   if(r.img){av.src=r.img;av.alt=r.name;av.width=46;av.height=46}else av.textContent=(r.name||'?').charAt(0);
-  var who=document.createElement('div');var n=document.createElement('b');n.textContent=r.name;var m=document.createElement('small');m.textContent=r.place+' · '+r.date;
-  who.append(n,document.createElement('br'),m);top.append(av,who);
-  var s=document.createElement('div');s.className='st';s.textContent=stars(r.stars||5);
-  var h=document.createElement('h3');h.textContent=r.title;var p=document.createElement('p');p.textContent=r.text;
-  c.append(top,s,h,p);
-  var t=document.createElement('span');
-  if(r.sample){t.className='samp';t.textContent='SAMPLE – REPLACE'}else{t.className='ver';t.textContent='✔ Verified buyer'}
-  c.appendChild(t);l.appendChild(c);
+  var who=document.createElement('div');var n=document.createElement('b');n.textContent=r.name;who.appendChild(n);
+  var sub=[r.place,r.date].filter(Boolean).join(' \u00b7 ');
+  if(sub){var m=document.createElement('small');m.textContent=sub;who.append(document.createElement('br'),m)}else{var m2=document.createElement('small');m2.textContent='GH Builders USA customer';who.append(document.createElement('br'),m2)}
+  cap.append(av,who);
+  if(r.stars){var s=document.createElement('div');s.className='st';s.textContent=stars(r.stars);c.appendChild(s)}
+  c.append(q,cap);l.appendChild(c);
  });
- if(!real)document.getElementById('rvNote').textContent='Placeholder content: replace with real, verified reviews before this page goes live.';
 })();
 </script></div>
 <div class="trustwrap"><aside class="trustbox" aria-label="About GH Builders USA">
