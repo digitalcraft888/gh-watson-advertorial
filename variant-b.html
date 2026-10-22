@@ -82,12 +82,17 @@ article p{margin-bottom:20px}
 /* size finder */
 .sizes{margin:30px 0;background:var(--gl);border-radius:18px;padding:24px 22px 28px}
 .sizes h3{font-size:16px;margin-bottom:4px}.sizes>p{font-size:14px;color:var(--mut);margin-bottom:18px}
-.scale{position:relative;height:6px;background:linear-gradient(90deg,#9cc8aa,var(--g));border-radius:6px;margin:56px 14px 46px}
-.scale .t{position:absolute;top:-48px;transform:translateX(-50%);text-align:center;font-size:11px;font-weight:700;line-height:1.2;white-space:nowrap}
-.scale .t img{width:46px;height:46px;border-radius:50%;object-fit:cover;object-position:50% 70%;margin:0 auto 4px;border:2px solid #fff;box-shadow:0 4px 10px rgba(0,0,0,.2)}
-.scale .t:after{content:"";position:absolute;left:50%;bottom:-12px;width:12px;height:12px;border-radius:50%;background:var(--gold);border:2px solid #fff;transform:translateX(-50%)}
-.scale .e{position:absolute;top:18px;font-size:12px;font-weight:700;color:var(--mut)}
-.scale .e.l{left:0}.scale .e.r{right:0}
+.scale{position:relative;height:196px;margin:8px 18px 0}
+.scale:before{content:"";position:absolute;left:0;right:0;top:99px;height:6px;border-radius:6px;background:linear-gradient(90deg,#a9d0b6,var(--g))}
+.scale .t{position:absolute;top:0;width:120px;transform:translateX(-50%);text-align:center}
+.scale .ph{width:68px;height:68px;border-radius:50%;overflow:hidden;margin:0 auto;border:3px solid #fff;box-shadow:0 8px 18px -4px rgba(0,0,0,.35);background:#dfe6dc}
+.scale .ph img{width:100%;height:100%;object-fit:cover;transform:scale(1.55);transform-origin:50% 62%}
+.scale .stem{width:2px;height:24px;background:#9db8a6;margin:0 auto}
+.scale .dot{width:18px;height:18px;border-radius:50%;background:var(--gold);border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.25);margin:0 auto}
+.scale .nm{display:block;margin-top:10px;font:800 13px 'Montserrat',sans-serif;color:var(--ink);line-height:1.2}
+.scale .sf{display:block;font-size:12px;color:var(--mut);font-weight:600}
+.scale .e{position:absolute;top:114px;font-size:12px;font-weight:700;color:var(--mut)}
+.scale .e.l{left:-4px}.scale .e.r{right:-4px}
 
 /* strip */
 .stripwrap{background:var(--gl);padding:64px 0;margin-top:70px}
@@ -132,7 +137,7 @@ body{font-size:17px}
 .rs i{width:44px;height:44px;font-size:19px}
 .sticky p{display:none}.sticky .btn{width:100%}
 th,td{padding:10px;font-size:13px}
-.scale .t{font-size:10px}.scale .t img{width:36px;height:36px}
+.scale{height:176px;margin:8px 12px 0}.scale:before{top:80px}.scale .t{width:84px}.scale .ph{width:50px;height:50px}.scale .stem{height:18px}.scale .nm{font-size:12px}.scale .sf{font-size:11px}.scale .e{top:94px;font-size:11px}.scale .t.hm{display:none}
 .btn{width:100%}.top .btn{width:auto}
 }
 </style></head><body>
@@ -169,7 +174,7 @@ th,td{padding:10px;font-size:13px}
 
  <div class="rs"><i>2</i><h2>There's a size for every lot and budget</h2></div>
  <p>The collection runs from compact homes of around 1,300 sq ft up to family layouts of about 4,700 sq ft. Choose single-story for no-stairs living, or two-story to make the most of a narrow block.</p>
- <div class="sizes"><h3>Where some popular plans sit</h3><p>Square footage across the collection</p><div class="scale"><span class="e l">1,300 sq ft</span><div class="t" style="left:22.9%"><img src="https://www.ghbuilderstore.com/cdn/shop/files/Lachlan_0fe241a6-7a66-4c23-9fc1-e7ff648e1d90.jpg?width=200" alt="Lachlan plan thumbnail" loading="lazy" width="46" height="46">Lachlan<br>2,077</div><div class="t" style="left:41.4%"><img src="https://www.ghbuilderstore.com/cdn/shop/files/Richmond_a13fd258-7bd3-4d42-a93c-4d7070fbbb84.jpg?width=200" alt="Richmond plan thumbnail" loading="lazy" width="46" height="46">Richmond<br>2,708</div><div class="t" style="left:51.9%"><img src="https://www.ghbuilderstore.com/cdn/shop/files/Watson_814b4f48-71d3-4226-a80b-645018cc6b0d.jpg?width=200" alt="Watson plan thumbnail" loading="lazy" width="46" height="46">Watson<br>3,065</div><div class="t" style="left:65.4%"><img src="https://www.ghbuilderstore.com/cdn/shop/files/Madrid_d9b8f2d4-bf83-45c4-8174-39d2119bea75.jpg?width=200" alt="Madrid plan thumbnail" loading="lazy" width="46" height="46">Madrid<br>3,522</div><span class="e r">4,700 sq ft</span></div></div>
+ <div class="sizes"><h3>Where some popular plans sit</h3><p>Square footage across the collection</p><div class="scale"><span class="e l">1,300 sq ft</span><div class="t" style="left:22.9%"><div class="ph"><img src="https://www.ghbuilderstore.com/cdn/shop/files/Lachlan_0fe241a6-7a66-4c23-9fc1-e7ff648e1d90.jpg?width=240" alt="Lachlan plan thumbnail" loading="lazy" width="68" height="68"></div><div class="stem"></div><div class="dot"></div><span class="nm">Lachlan</span><span class="sf">2,077 sq ft</span></div><div class="t" style="left:41.4%"><div class="ph"><img src="https://www.ghbuilderstore.com/cdn/shop/files/Richmond_a13fd258-7bd3-4d42-a93c-4d7070fbbb84.jpg?width=240" alt="Richmond plan thumbnail" loading="lazy" width="68" height="68"></div><div class="stem"></div><div class="dot"></div><span class="nm">Richmond</span><span class="sf">2,708 sq ft</span></div><div class="t hm" style="left:51.9%"><div class="ph"><img src="https://www.ghbuilderstore.com/cdn/shop/files/Watson_814b4f48-71d3-4226-a80b-645018cc6b0d.jpg?width=240" alt="Watson plan thumbnail" loading="lazy" width="68" height="68"></div><div class="stem"></div><div class="dot"></div><span class="nm">Watson</span><span class="sf">3,065 sq ft</span></div><div class="t" style="left:65.4%"><div class="ph"><img src="https://www.ghbuilderstore.com/cdn/shop/files/Madrid_d9b8f2d4-bf83-45c4-8174-39d2119bea75.jpg?width=240" alt="Madrid plan thumbnail" loading="lazy" width="68" height="68"></div><div class="stem"></div><div class="dot"></div><span class="nm">Madrid</span><span class="sf">3,522 sq ft</span></div><span class="e r">4,700 sq ft</span></div></div>
  <div class="cta"><a class="btn gold" href="https://www.ghbuilderstore.com/collections/sustainable-house-plans" data-cta="mid1">Find Your Size →</a><p>Browse all 30+ plans</p></div>
 
  <div class="rs"><i>3</i><h2>Efficiency is designed in, not bolted on</h2></div>
