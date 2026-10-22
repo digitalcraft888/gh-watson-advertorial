@@ -209,8 +209,26 @@ th,td{padding:10px;font-size:13px}
 .cmpt tbody td:first-child{font-size:12px}
 .cmpt thead th{font-size:12px}.cmpt thead th.us{font-size:13px}
 }
+
+.offerbar{background:#c0392b;color:#fff;text-align:center;font:700 14px 'Open Sans',sans-serif;padding:10px 14px}
+.offerbar b{font-family:'Montserrat',sans-serif;background:rgba(0,0,0,.22);border-radius:6px;padding:3px 9px;margin:0 10px;letter-spacing:.04em}
+.offerbar a{color:#fff;text-decoration:underline;margin-left:6px}
+.delay{display:flex;gap:18px;align-items:flex-start;background:#fff7e8;border:1px solid #f1d9a6;border-left:6px solid #e9a62b;border-radius:14px;padding:22px 24px;margin:34px 0}
+.delay .dl-ico{font-size:30px;line-height:1}
+.delay h3{font:800 20px 'Montserrat',sans-serif;margin:0 0 10px;color:#17201b;line-height:1.3}
+.delay ul{list-style:none;margin:0 0 10px;padding:0}
+.delay li{padding:5px 0 5px 24px;position:relative;font-size:16px;font-weight:600}
+.delay li:before{content:"";position:absolute;left:2px;top:13px;width:10px;height:10px;border-radius:50%;background:#e9a62b}
+.delay p{margin:0;font-size:15px;color:#58645d}
+.today{display:flex;gap:14px;justify-content:center;max-width:760px;margin:28px auto 30px}
+.today div{flex:1;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:16px 12px;text-align:center;color:#fff}
+.today i{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#e9a62b;color:#17201b;font:800 14px 'Montserrat',sans-serif;font-style:normal;margin:0 auto 8px}
+.today b{display:block;font:800 13px 'Montserrat',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#e9a62b}
+.today span{font-size:14px;color:#e3efe7}
+@media(max-width:640px){.delay{padding:18px}.today{flex-direction:column}}
 </style></head><body>
 <div class="bar">Advertorial · Home Planning</div>
+<div class="offerbar" id="offerbar" hidden><span id="offerText"></span><b id="offerClock"></b><a href="https://www.ghbuilderstore.com/collections/sustainable-house-plans" data-cta="offerbar" rel="noopener">Browse plans →</a></div>
 <div class="top"><div class="wide"><a class="logo" href="https://www.ghbuilderstore.com/collections/sustainable-house-plans" rel="noopener"><img src="https://digitalcraft888.github.io/gh-watson-advertorial/gh-builders-logo.png" alt="GH Builders USA" width="148" height="40"></a><a class="btn sm" href="https://www.ghbuilderstore.com/collections/sustainable-house-plans" data-cta="nav" rel="noopener">Browse Plans</a></div></div>
 <main>
 <header class="col">
@@ -226,7 +244,7 @@ th,td{padding:10px;font-size:13px}
  <li>A ready-made plan lets you collect real quotes first, then decide</li>
  <li>GH Builders USA has 30+ plans, from compact homes to large two-story layouts</li>
  <li>Every design is solar-ready, with potential 20–50% energy bill savings</li></ul></div>
- <div class="cta"><a class="btn gold" href="https://www.ghbuilderstore.com/collections/sustainable-house-plans" data-cta="top" rel="noopener">See The 30+ House Plans →</a><p>Single &amp; two-story · Digital PDF delivery</p></div>
+ <div class="cta"><a class="btn gold" href="https://www.ghbuilderstore.com/collections/sustainable-house-plans" data-cta="top" rel="noopener">See The 30+ House Plans →</a><p>Instant digital PDF delivery · start collecting quotes today</p></div>
 </div>
 
 <article class="col">
@@ -237,6 +255,9 @@ th,td{padding:10px;font-size:13px}
  <div class="paths"><span class="lab b">THE USUAL WAY</span><div class="flow bad"><span>Pay a designer</span><span>Wait weeks</span><span>Send to builders</span><span>Quotes over budget</span></div>
   <span class="lab g">THE SMARTER WAY</span><div class="flow good"><span>Choose a proven plan</span><span>Get the PDF</span><span>Collect real quotes</span><span>Decide with numbers</span></div></div>
 
+ <aside class="delay"><div class="dl-ico">⏱</div><div><h3>Every week of waiting is another week of guessing</h3>
+<ul><li>Your budget stays a guess until a builder prices real drawings</li><li>Finding out late makes revisions more expensive</li><li>Your land, finance and start-date decisions stay on hold</li></ul>
+<p>The fastest way to a real number is to get drawings builders can price today.</p></div></aside>
  <div class="rs"><i>1</i><h2>You learn the real price first</h2></div>
  <figure class="fig plan"><img src="https://www.ghbuilderstore.com/cdn/shop/files/LACHLAN_2077.jpg?width=1200" alt="Sample floor plan sheet from an estimation drawing set" loading="lazy" width="1200" height="675"><figcaption>Sample floor plan sheet from an estimation drawing set</figcaption></figure>
  <p>A ready-made plan comes with estimation drawings builders can price straight away. You find out what the home costs to build before you pay for full construction drawings, not after.</p>
@@ -362,10 +383,26 @@ var REVIEWS=[
 <ul><li>✔ ISO 50001 certified builder</li><li>✔ Digital PDF delivery</li><li>✔ <a href="https://www.ghbuilderstore.com/policies/refund-policy" rel="noopener">Refund policy</a></li></ul>
 <p style="margin-top:12px!important">Questions? <a href="mailto:office@greenhomesbuilders.com">office@greenhomesbuilders.com</a> · <a href="tel:+13022445730">+1 (302) 244 5730</a></p>
 <small>Company, certification and energy-savings claims on this page are provided by GH Builders USA and have not been independently verified. Energy savings vary by climate, construction and use.</small></div></aside></div>
-<section class="final"><h2>Know your real build cost before you commit.</h2><p>Choose from 30+ single and two-story, solar-ready plans. Digital PDF delivered after checkout.</p><a class="btn gold" href="https://www.ghbuilderstore.com/collections/sustainable-house-plans" data-cta="final" rel="noopener">Choose Your House Plan →</a></section>
+<section class="final"><h2>Know your real build cost before you commit.</h2><div class="today"><div><i>1</i><b>Today</b><span>Choose your plan</span></div><div><i>2</i><b>Today</b><span>Email the PDF to builders</span></div><div><i>3</i><b>Soon</b><span>Compare real quotes</span></div></div><p>Every day you wait is a day without a real price. Choose from 30+ solar-ready plans and get your digital PDF straight after checkout.</p><a class="btn gold" href="https://www.ghbuilderstore.com/collections/sustainable-house-plans" data-cta="final" rel="noopener">Choose Your House Plan →</a></section>
 </main>
 <p class="disc"><b>Advertising disclosure:</b> This page is an advertisement and paid content from GH Builders USA. It is not a news article or independent review. Energy savings figures are estimates provided by GH Builders USA; actual savings vary by climate, construction and use. The estimation drawing set is intended for planning and estimating and must be reviewed and adapted by a licensed builder or engineer before construction.</p>
 <footer><a class="flogo" href="https://www.ghbuilderstore.com/collections/sustainable-house-plans" rel="noopener"><img src="https://digitalcraft888.github.io/gh-watson-advertorial/gh-builders-logo.png" alt="GH Builders USA" width="111" height="30"></a><br>© 2026 GH Builders USA. All rights reserved.<br><br><a href="https://www.ghbuilderstore.com/policies/privacy-policy" rel="noopener">Privacy Policy</a><a href="https://www.ghbuilderstore.com/policies/refund-policy" rel="noopener">Refund Policy</a><a href="mailto:office@greenhomesbuilders.com">Contact</a></footer>
-<div class="sticky" id="sticky"><p>30+ plans · find your size</p><a class="btn sm gold" href="https://www.ghbuilderstore.com/collections/sustainable-house-plans" data-cta="sticky" rel="noopener">Browse Plans →</a></div>
+<div class="sticky" id="sticky"><p>Don’t guess your build cost · see the plans</p><a class="btn sm gold" href="https://www.ghbuilderstore.com/collections/sustainable-house-plans" data-cta="sticky" rel="noopener">Browse Plans →</a></div>
 <script>(function(){var s=document.getElementById('sticky'),h=document.querySelector('.take');function chk(){s.classList.toggle('on',h.getBoundingClientRect().bottom<0)}addEventListener('scroll',chk,{passive:true});chk()})();</script>
+<script>
+// ===== OFFER (optional, honest urgency) =====
+// Set a REAL offer and end date to show the red bar with a live countdown. Leave ends:null to keep it hidden.
+// Example: var OFFER={text:'Reader offer ends in',ends:'2026-11-01T23:59:00-05:00'};
+var OFFER={text:'',ends:null};
+(function(){
+ if(!OFFER.ends||!OFFER.text)return;
+ var end=new Date(OFFER.ends).getTime();if(isNaN(end)||end<Date.now())return;
+ var bar=document.getElementById('offerbar'),t=document.getElementById('offerText'),c=document.getElementById('offerClock');
+ t.textContent=OFFER.text;bar.hidden=false;
+ function tick(){var d=end-Date.now();if(d<=0){bar.hidden=true;return}
+  var D=Math.floor(d/864e5),H=Math.floor(d%864e5/36e5),M=Math.floor(d%36e5/6e4),S=Math.floor(d%6e4/1e3);
+  c.textContent=(D>0?D+'d ':'')+('0'+H).slice(-2)+':'+('0'+M).slice(-2)+':'+('0'+S).slice(-2);setTimeout(tick,1000)}
+ tick();
+})();
+</script>
 </body></html>
