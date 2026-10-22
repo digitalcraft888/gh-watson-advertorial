@@ -183,6 +183,32 @@ th,td{padding:10px;font-size:13px}
 .rvw .rtop{margin:0;margin-top:auto;padding-top:4px}
 .rvw .rnote a{color:#1f5a3a}
 @media(max-width:860px){.rvw .rgrid{grid-template-columns:1fr}}
+
+.cmpwrap{margin:26px 0}
+.cmpt{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border-radius:18px;box-shadow:0 0 0 1px #e3e9e4,0 24px 50px -30px rgba(0,0,0,.35);overflow:visible;font-size:16px}
+.cmpt th,.cmpt td{padding:18px 20px;text-align:left;vertical-align:middle}
+.cmpt thead th{font:700 15px 'Montserrat',sans-serif;background:#17201b;color:#fff;position:relative}
+.cmpt thead th:first-child{border-top-left-radius:18px}.cmpt thead th:last-child{border-top-right-radius:18px;background:#4a5650}
+.cmpt thead th.us{background:#1f5a3a;font-size:16px;padding-top:26px;box-shadow:0 -10px 0 #1f5a3a,0 0 24px rgba(31,90,58,.35);z-index:1}
+.cmpt .badge{position:absolute;top:-14px;left:16px;background:#e9a62b;color:#17201b;font:800 10px 'Montserrat',sans-serif;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:99px}
+.cmpt tbody td{border-top:1px solid #e3e9e4}
+.cmpt tbody td:first-child{font-weight:700;color:#17201b;font-size:15px}
+.cmpt td.us{background:#eef6f0;color:#143d27;font-weight:700;position:relative;padding-left:52px;box-shadow:inset 3px 0 0 #1f5a3a}
+.cmpt td.us:before{content:"";position:absolute;left:18px;top:50%;width:22px;height:22px;transform:translateY(-50%);border-radius:50%;background:#1f5a3a url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") no-repeat center/14px}
+.cmpt td.them{color:#6b756e;position:relative;padding-left:48px}
+.cmpt td.them:before{content:"";position:absolute;left:16px;top:50%;width:20px;height:20px;transform:translateY(-50%);border-radius:50%;background:#f3dedb url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c0392b' stroke-width='3.4' stroke-linecap='round'%3E%3Cpath d='M7 7l10 10M17 7L7 17'/%3E%3C/svg%3E") no-repeat center/12px}
+.cmpt tbody tr:last-child td.us{border-bottom-left-radius:0}
+.cmpt .sr{position:absolute;left:-9999px}
+.cmpnote{font-size:12px;color:#6b756e;margin:12px 4px 0}
+.cmpcta{margin-top:22px;text-align:center;background:#143d27;border-radius:16px;padding:24px}
+.cmpcta p{color:#fff;font:700 18px 'Montserrat',sans-serif;margin:0 0 14px}
+@media(max-width:640px){
+.cmpt{font-size:13px}.cmpt th,.cmpt td{padding:12px 10px}
+.cmpt td.us{padding-left:38px}.cmpt td.us:before{left:9px;width:18px;height:18px;background-size:12px}
+.cmpt td.them{padding-left:34px}.cmpt td.them:before{left:8px;width:18px;height:18px;background-size:10px}
+.cmpt tbody td:first-child{font-size:12px}
+.cmpt thead th{font-size:12px}.cmpt thead th.us{font-size:13px}
+}
 </style></head><body>
 <div class="bar">Advertorial · Home Planning</div>
 <div class="top"><div class="wide"><a class="logo" href="https://www.ghbuilderstore.com/collections/sustainable-house-plans" rel="noopener"><img src="https://digitalcraft888.github.io/gh-watson-advertorial/gh-builders-logo.png" alt="GH Builders USA" width="148" height="40"></a><a class="btn sm" href="https://www.ghbuilderstore.com/collections/sustainable-house-plans" data-cta="nav" rel="noopener">Browse Plans</a></div></div>
@@ -244,12 +270,16 @@ th,td{padding:10px;font-size:13px}
  <div class="rs"><i>7</i><h2>It costs a fraction of custom drawings</h2></div>
  <figure class="fig crop"><img src="https://www.ghbuilderstore.com/cdn/shop/files/St.Clair_d6ac5d71-00a1-4895-9ed3-0ae430bf6404.jpg?width=1200" alt="Single-story St. Clair house plan, one of 30+ GH Builders USA designs" loading="lazy" width="1200" height="1200"><figcaption>Pick a proven design and compare, instead of paying for revisions</figcaption></figure>
  <p>An estimation set costs a fraction of what custom drawings typically do. If a quote comes back higher than you hoped, compare another plan instead of paying a designer for revisions.</p>
- <table><thead><tr><th></th><th class="us">GH Builders Plan</th><th>Custom First</th></tr></thead><tbody>
- <tr><td><b>Upfront cost</b></td><td class="us">A fraction of design fees</td><td>Often thousands</td></tr>
- <tr><td><b>Time to drawings</b></td><td class="us">PDF after checkout</td><td>Often weeks</td></tr>
- <tr><td><b>Know build cost</b></td><td class="us">Before you commit</td><td>After you've paid</td></tr>
- <tr><td><b>Size choice</b></td><td class="us">30+ plans, 1–2 stories</td><td>Blank page</td></tr>
- <tr><td><b>Comparing builders</b></td><td class="us">Same drawings</td><td>Revisions add cost</td></tr></tbody></table>
+ <div class="cmpwrap"><table class="cmpt"><thead><tr><th><span class="sr">Comparison</span></th><th class="us"><span class="badge">Recommended</span>GH Builders Plan</th><th class="them">Custom Drawings First</th></tr></thead><tbody>
+<tr><td>Upfront cost</td><td class="us">A fraction of custom design fees</td><td class="them">Often thousands</td></tr>
+<tr><td>Time to drawings</td><td class="us">Digital PDF, delivered after checkout</td><td class="them">Often weeks of waiting</td></tr>
+<tr><td>When you learn the build cost</td><td class="us">Before you commit</td><td class="them">Only after you've paid</td></tr>
+<tr><td>If a quote is too high</td><td class="us">Compare another plan and try again</td><td class="them">Pay for redesign and revisions</td></tr>
+<tr><td>Choice of size</td><td class="us">30+ ready plans, 1 or 2 stories</td><td class="them">Start from a blank page</td></tr>
+<tr><td>Comparing builders</td><td class="us">Same drawings, like-for-like quotes</td><td class="them">Revisions add cost every time</td></tr>
+<tr><td>Energy efficiency</td><td class="us">Solar-ready, designed in</td><td class="them">Depends on your designer</td></tr></tbody></table>
+<p class="cmpnote">Typical custom-design process compared with a GH Builders USA estimation drawing set.</p>
+<div class="cmpcta"><p>See why families price first, then build.</p><a class="btn gold" href="https://www.ghbuilderstore.com/collections/sustainable-house-plans" data-cta="compare" rel="noopener">Browse The House Plans <span>→</span></a></div></div>
 </article>
 
 <section class="stripwrap"><div class="wide"><h2>Browse popular sizes</h2><p class="sub">Swipe through eight of the 30+ plans in the collection</p></div>
