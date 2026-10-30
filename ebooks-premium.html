@@ -201,7 +201,7 @@ body{font-size:16px}
 .trustwrap{padding:56px 22px 0}
 @media(max-width:640px){.trustbox{grid-template-columns:1fr;padding:24px 22px}.trustbox .tb-logo{width:96px}}
 
-.rvw{padding:72px 22px 0}
+.rvw{padding:96px 22px;background:#fff}
 .rvw-in{max-width:1000px;margin:0 auto;text-align:center}
 .rvw .rv-eb{font:700 12px 'Open Sans',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#b8924a;display:block;margin-bottom:12px}
 .rvw h2{font-family:'Montserrat',sans-serif;font-size:clamp(26px,3.4vw,38px);font-weight:700;color:#17201b;margin:0 0 12px;letter-spacing:-.02em}
@@ -318,7 +318,7 @@ body{font-size:16px}
 @media(max-width:960px){.fgrid,.gcards{grid-template-columns:1fr}.steps2{grid-template-columns:repeat(2,1fr)}.fan{max-width:420px}}
 @media(max-width:600px){.nav .btn.sm{white-space:nowrap;padding:10px 16px;font-size:13px}.stats{padding:28px 0}.stats .wrap{grid-template-columns:repeat(2,1fr);gap:12px;padding:0 16px}.stats .wrap>div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);border-radius:16px;padding:18px 8px;border-left:1px solid rgba(255,255,255,.13);display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:92px}.stats .wrap>div+div{border-left:1px solid rgba(255,255,255,.13)}.stats b{font-size:22px;white-space:nowrap;margin-bottom:6px;color:#fff}.stats span{font-size:10.5px;letter-spacing:.08em;line-height:1.4;text-align:center}.steps2{grid-template-columns:repeat(2,1fr);gap:12px;margin-top:32px}.step2{padding:20px 16px;border-radius:18px}.step2 b{font-size:30px;margin-bottom:10px}.step2 h3{font-size:16px;line-height:1.25;margin-bottom:6px}.step2 p{font-size:13.5px;line-height:1.5}.gbody{padding:22px}.gimg{height:260px}}
 @media(max-width:360px){.stats .wrap{padding:0 12px;gap:10px}.stats .wrap>div{padding:16px 4px;min-width:0}.stats b{font-size:17px}.stats span{font-size:9.5px;letter-spacing:.05em}}
-.rib2{position:absolute;top:16px;right:16px;background:#c0392b;color:#fff;font:800 11px Montserrat,sans-serif;letter-spacing:.04em;text-transform:uppercase;padding:6px 12px;border-radius:99px;box-shadow:0 6px 14px -4px rgba(0,0,0,.4)}.offerbar[hidden]{display:none}.offerbar b:empty{display:none}</style></head><body>
+.rib2{position:absolute;top:16px;right:16px;background:#c0392b;color:#fff;font:800 11px Montserrat,sans-serif;letter-spacing:.04em;text-transform:uppercase;padding:6px 12px;border-radius:99px;box-shadow:0 6px 14px -4px rgba(0,0,0,.4)}.offerbar[hidden]{display:none}.offerbar b:empty{display:none}@media(max-width:960px){.rvw{padding:64px 20px}}</style></head><body>
 <div class="announce">Advertorial · Homeowner Guides</div>
 <div class="offerbar" id="offerbar"><span id="offerText">Now on sale in the store: all 6 guides are 33% off the regular price</span><b id="offerClock"></b><a href="https://www.ghbuilderstore.com/collections/consumer-library" data-cta="offerbar" rel="noopener">Browse guides →</a></div>
 <header class="nav"><div class="wrap"><a class="logo" href="https://www.ghbuilderstore.com/collections/consumer-library" rel="noopener"><img src="https://digitalcraft888.github.io/gh-watson-advertorial/gh-builders-logo.png" alt="GH Builders USA" width="148" height="40"></a><a class="btn sm" href="https://www.ghbuilderstore.com/collections/consumer-library" data-cta="nav" rel="noopener">Browse Guides</a></div></header>
@@ -327,8 +327,8 @@ body{font-size:16px}
  <div>
   <span class="eyebrow">Homeowner Guides · Consumer Library</span>
   <h1>Building or renovating? <em>Read this before you spend a dollar.</em></h1>
-  <p class="lead">Most expensive home-project mistakes are made at the planning stage. These six short, practical guides help you decide what to do, who to hire and where your money works hardest.</p>
   <div class="byline"><img class="av" src="https://ghbuildersusa.com/wp-content/uploads/2018/07/thumbnail_image003-e1598941804290.jpg" alt="Mick Fabar, Founder and Managing Director of Green Homes" width="52" height="52"><div><b style="color:var(--ink)">Mick Fabar</b><small>Founder &amp; Managing Director, Green Homes<br>Licensed Master Builder · 5 min read · Updated Oct 30, 2026</small></div></div>
+  <p class="lead">Most expensive home-project mistakes are made at the planning stage. These six short, practical guides help you decide what to do, who to hire and where your money works hardest.</p>
   <div class="btns"><a class="btn gold" href="https://www.ghbuilderstore.com/collections/consumer-library" data-cta="hero" rel="noopener">Browse The 6 Guides · 33% Off <span>→</span></a></div>
   <p class="sub-cta"><span class="offchip">33% off in the store now</span> Instant digital delivery · for homeowners and first-time builders</p>
   <div class="checks"><span><svg viewBox="0 0 24 24"><path d="M5 12l4.5 4.5L19 7"/></svg> Plain-English guidance</span><span><svg viewBox="0 0 24 24"><path d="M5 12l4.5 4.5L19 7"/></svg> Six key decisions covered</span><span><svg viewBox="0 0 24 24"><path d="M5 12l4.5 4.5L19 7"/></svg> Digital download</span></div>
@@ -401,7 +401,7 @@ var REVIEWS=[
 <div class="fit2 rv"><div class="fitg"><div class="fh"><span class="fbadge">✓</span><h3>A good fit if you…</h3></div><ul><li>Plan to build, renovate or upgrade in the next year or two</li><li>Feel overwhelmed by options and conflicting advice</li><li>Want to understand costs and trade-offs before you commit</li><li>Would rather learn from a short guide than from costly mistakes</li></ul></div>
 <div class="fitr"><div class="fh"><span class="fbadge">✕</span><h3>Probably not for you if you…</h3></div><ul><li>Need a detailed, site-specific design or engineering report</li><li>Want a contractor or designer to make every decision for you</li></ul></div></div><div class="center rv" style="margin-top:40px"><a class="btn gold" href="https://www.ghbuilderstore.com/collections/consumer-library" data-cta="fit" rel="noopener">Sounds like you? Browse the guides <span>→</span></a><p class="sub-cta" style="margin-top:12px"><span class="offchip">33% off</span> in the store now</p></div></div></section>
 
-<section><div class="narrow"><div class="center rv"><span class="eyebrow">Questions</span><h2>Frequently asked questions</h2></div><div class="rv" style="margin-top:36px"><details><summary>Who are these guides for?</summary><p>Homeowners who are planning to build, renovate or upgrade, and want clarity before spending money on design or construction. The guides are written for homeowners and first-time builders, not professionals.</p></details>
+<section class="alt"><div class="narrow"><div class="center rv"><span class="eyebrow">Questions</span><h2>Frequently asked questions</h2></div><div class="rv" style="margin-top:36px"><details><summary>Who are these guides for?</summary><p>Homeowners who are planning to build, renovate or upgrade, and want clarity before spending money on design or construction. The guides are written for homeowners and first-time builders, not professionals.</p></details>
 <details><summary>What topics do the guides cover?</summary><p>The six guides cover where to start before you build or renovate, whether to build new or upgrade your existing home, working with contractors and avoiding pitfalls, energy-efficient upgrades that pay back, making smarter home-ownership decisions, and designing a healthy, comfortable, sustainable home.</p></details>
 <details><summary>Which guide should I start with?</summary><p>If you are unsure where to begin, start with the short guide. If you are choosing between a new build and an upgrade, read the build-or-upgrade guide. If you already have a contractor in mind, read the contractor guide.</p></details>
 <details><summary>Do I need to be building right now?</summary><p>No. They are useful at any stage: before you commit to a project, while you compare options, or when you are planning upgrades to the home you already own.</p></details>
@@ -410,15 +410,6 @@ var REVIEWS=[
 <details><summary>Where do I see the price?</summary><p>Each guide shows its price on its page in the Consumer Library, before you pay.</p></details>
 <details><summary>What is the refund policy?</summary><p>Refund terms are set by GH Builders USA and apply to your order. Read the refund policy on the GH Builders USA store before you buy, or email the team with any question.</p></details>
 <details><summary>Who do I contact with questions?</summary><p>Email <a href=mailto:office@greenhomesbuilders.com>office@greenhomesbuilders.com</a> or call +1 (302) 244 5730.</p></details></div></div></section>
-
-<div class="trustwrap"><aside class="trustbox" aria-label="About GH Builders USA">
-<a class="tb-logo" href="https://www.ghbuilderstore.com/collections/consumer-library" rel="noopener"><img src="https://digitalcraft888.github.io/gh-watson-advertorial/gh-builders-logo.png" alt="GH Builders USA logo" width="96" height="26" loading="lazy"></a>
-<div><h2>About GH Builders USA</h2>
-<p>GH Builders USA is part of the Green Homes network. The company says more than 10,000 projects are underway globally and that its designs are backed by real performance modelling. It is certified to the ISO 50001 energy management standard.</p>
-<p><b>Mick Fabar</b>, Founder and Managing Director, is a licensed Master Builder. He completed his carpentry apprenticeship in the Central West of NSW and later a Masters in Construction and Building Management at ANU.</p>
-<ul><li>✔ ISO 50001 certified builder</li><li>✔ Digital delivery</li><li>✔ <a href="https://www.ghbuilderstore.com/policies/refund-policy" rel="noopener">Refund policy</a></li></ul>
-<p style="margin-top:12px!important">Questions? <a href="mailto:office@greenhomesbuilders.com">office@greenhomesbuilders.com</a> · <a href="tel:+13022445730">+1 (302) 244 5730</a></p>
-<small>Company and certification claims on this page are provided by GH Builders USA and have not been independently verified.</small></div></aside></div>
 
 <section class="dark cta-band"><div class="wrap rv"><div class="offbox"><strong>33% OFF</strong><span>All six guides are on sale in the store<em>Price shown on each guide page before you pay</em></span></div><br><span class="eyebrow">Ready when you are</span><h2>Make your next home decision an informed one.</h2><p class="lead">Six practical guides for homeowners planning to build, renovate or upgrade. Digital delivery after checkout.</p><div class="btns"><a class="btn gold" href="https://www.ghbuilderstore.com/collections/consumer-library" data-cta="final" rel="noopener">Choose Your Guide &amp; Save 33% <span>→</span></a></div></div></section>
 </main>
